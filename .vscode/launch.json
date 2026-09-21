@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug OpenGL Learning",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/C_Database",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build",
+      "terminal": "integrated",
+      "stopOnEntry": false
+    }
+  ]
+}

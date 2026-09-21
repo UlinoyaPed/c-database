@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["-S", "${workspaceFolder}", "-B", "${workspaceFolder}/build", "-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON", "-DCMAKE_C_COMPILER=clang", "-DCMAKE_CXX_COMPILER=clang++"],
+      "problemMatcher": []
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "${workspaceFolder}/build", "--parallel"],
+      "dependsOn": "CMake: configure",
+      "group": {"kind": "build", "isDefault": true},
+    },
+    {
+      "label": "build and run",
+      "type": "shell",
+      "command": "${workspaceFolder}/build/C_Database",
+      "dependsOn": "build",
+      "problemMatcher": []
+    }
+  ]
+}
